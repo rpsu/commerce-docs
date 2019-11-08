@@ -86,7 +86,7 @@ $payment = $payment_storage->create([
 $logger->info('Saving Payment information. Transaction reference: ' . $merchantTransactionReference);
 
 $payment->save();
-drupal_set_message('Payment was processed');
+$this->messenger()->addStatus($this->t('Payment was processed'));
 
 $logger->info('Payment information saved successfully. Transaction reference: ' . $merchantTransactionReference);
 ```
